@@ -2,17 +2,17 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import MainPage from './components/pages/MainPage';
 
 class BooksApp extends React.Component {
-
-
   render() {
     return {
       <div> 
-        <Route exact path='/' component= {MainPage} />
+        <Route exact path='/' component= { MainPage } />
       </div>
-    };
+     };
+  
 
 
 
