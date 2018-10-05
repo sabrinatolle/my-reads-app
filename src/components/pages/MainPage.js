@@ -21,15 +21,21 @@ class MainPage extends React.Component {
         });
     }
 
-    updateBook = (book, shelf) => {
+    updateBooks = (book, shelf) => {
         BooksAPI.update(book, shelf)
-        .then(resp => {
-        book.shelf = shelf;
-        this.setState(state => ({
-            books: state.books.filter(b => b.id !== book.id).concat([book])
-        }));
-        });
-      }
+            .then(resp => {
+                book.shelf = shelf;
+                this.setState(state => ({
+                    books: state.books.filter(b => b.id !== book.id).concat([book])
+                }));
+            });
+    };
+    get updateBook() {
+        return this.updateBooks;
+    }
+    set updateBook(value) {
+        this.updateBooks = value;
+    }
 
     render() {
         return(
