@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import *as BooksAPI from '../../BooksAPI'
-import BooksApp from '../../App';
+
 import Book from '../Book';
 
 class SearchPage extends React.Component {
@@ -26,7 +26,7 @@ componentDidMount() {
     this.setState({query: query}, this.submitSearch);
 
   }
-// checks if search query is empty or undefined
+/* checks if search query is empty or undefined*/
 
   submitSearch() {
     if(this.state.query === '' || this.state.query === undefined) {
@@ -35,9 +35,9 @@ componentDidMount() {
     BooksAPI.search(this.state.query.trim()).then(res => {
       
       if(res.error) {
-       //clears results list 
+       /*clears results list*/ 
         return this.setState({ results: [] });
-      } // sets results to the specified list 
+      } /* sets results to the specified list*/ 
       else {
         res.forEach(b => {
           let f = this.state.books.filter(B => B.id === b.id);
@@ -74,7 +74,7 @@ componentDidMount() {
                     <div className="search-books-input-wrapper">
                      
                       <input type="text" placeholder="Search by title or author" value={this.state.query}
-                        onchange={(event) => this.updateQuery(event.target.value)} />
+                        onChange={(event) => this.updateQuery(event.target.value)} />
       
                     </div>
                   </div>
