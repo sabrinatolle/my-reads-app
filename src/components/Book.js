@@ -23,7 +23,7 @@ class Book extends React.Component {
                 </div>
                 </div>
                 <div className="book-title">{this.props.book.title[0]}</div>
-                <div className="book-authors">{this.props.book.authors && this.props.authors[0] || "No Author Available..."}</div>
+                <div className="book-authors">{this.props.book.authors && this.props.book.authors[0] || "No Author Available..."}</div>
                 </div>
         </li>
                      
