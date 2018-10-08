@@ -21,7 +21,7 @@ class MainPage extends React.Component {
         });
     }
 
-    updateBooks = (book, shelf) => {
+    updateBook = (book, shelf) => {
         BooksAPI.update(book, shelf)
             .then(resp => {
                 book.shelf = shelf;
@@ -30,12 +30,7 @@ class MainPage extends React.Component {
                 }));
             });
     };
-    get updateBook() {
-        return this.updateBooks;
-    }
-    set updateBook(value) {
-        this.updateBooks = value;
-    }
+    
 
     render() {
         return(

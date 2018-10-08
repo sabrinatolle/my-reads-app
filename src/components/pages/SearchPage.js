@@ -51,23 +51,16 @@ componentDidMount() {
     });
   }
 
-  updateBooks = (book, shelf) => {
+  updateBook = (book, shelf) => {
     BooksAPI.update(book, shelf)
-      .then(resp => {
-        book.shelf = shelf;
-        this.setState(state => ({
+    .then(resp => {
+      book.shelf = shelf;
+      this.setState(state => ({
           books: state.books.filter(b => b.id !== book.id).concat([book])
-        }));
+      }));
       });
   };
-  get updateBook() {
-    return this.updateBooks;
-  }
-  set updateBook(value) {
-    this.updateBooks = value;
-  }
-
-
+ 
 
 
 

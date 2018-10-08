@@ -8,13 +8,7 @@ class Book extends React.Component {
     
     render() {
         return (
-        this.bookInfo()
-                     
-        );
-    }
-
-    bookInfo() {
-        return <li>
+            <li>
             <div className="book">
                 <div className="book-top">
                     <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ""}")` }}></div>
@@ -31,9 +25,14 @@ class Book extends React.Component {
                 <div className="book-title">{this.props.book.title}</div>
                 <div className="book-authors">{this.props.book.authors && this.props.book.authors[0] || "No Author Available..."}</div>
             </div>
-        </li>;
-    }
-}
+        </li>
+        )};
+};
+                     
+        
+    
+
+   
 
 export default Book;
 
